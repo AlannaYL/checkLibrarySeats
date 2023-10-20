@@ -1,0 +1,17 @@
+[build]
+  functions = "netlify/functions" # 指定 Serverless Functions 文件夹的路径
+
+[[redirects]]
+  from = "/api/*" # 定义代理规则
+  to = "/.netlify/functions/:splat"
+  status = 200
+
+[[headers]]
+  for = "/*"
+ [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Access-Control-Allow-Methods = "GET, POST, PUT, DELETE, OPTIONS"
+    Access-Control-Allow-Headers = "Origin, X-Requested-With, Content-Type, Accept"
+
+[dev]
+  functionsPort = 9000
