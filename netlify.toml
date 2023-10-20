@@ -1,18 +1,14 @@
-[build]
-  functions = "netlify/functions" # 指定 Serverless Functions 文件夹的路径
-
 [[redirects]]
-  from = "/netlify/functions/*"
-  to = "/.netlify/functions/:splat"
+  from = "/api/getAllArea" # 定義路徑
+  to = "https://seat.tpml.edu.tw/sm/service/getAllArea" # 要代理的 URL
   status = 200
 
 [[headers]]
   for = "/*"
-  [headers.values]
+ [headers.values]
     Access-Control-Allow-Origin = "*"
-    Access-Control-Allow-Methods = "GET, POST, PUT, DELETE, OPTIONS"
-    Access-Control-Allow-Headers = "Content-Type"
-
+    Access-Control-Allow-Methods = "GET"
+    Access-Control-Allow-Headers = "application/json, text/plain, */*"
 
 [dev]
   functionsPort = 9000

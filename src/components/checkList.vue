@@ -17,7 +17,7 @@ import axios from 'axios';
 
 const selectedLibrary = ref('')
 // const proxyServer = `https://seat.tpml.edu.tw/sm/service/getAllArea`;
-const proxyServer = '/.netlify/functions/getLibrary'; // 使用代理 URL
+const proxyServer = '/api/getAllArea'; // 使用代理 URL
 let branchs = ref([])
 const fetchLibraryStatu = async () => {
   try {
